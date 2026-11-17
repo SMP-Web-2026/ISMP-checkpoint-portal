@@ -22,7 +22,7 @@ export const Layout: React.FC<LayoutProps> = ({
       {/* 
         Responsive container width:
         - Admin views: max-w-6xl on desktop for spacious table & data viewing
-        - Mentor views & forms: max-w-2xl on desktop for focused, clean, compact card layouts
+        - Mentor views & forms: max-w-4xl (comfortable balanced width, no text wrapping on headers)
         - Login: max-w-md
       */}
       <main
@@ -31,7 +31,7 @@ export const Layout: React.FC<LayoutProps> = ({
             ? 'max-w-md'
             : isAdminView
             ? 'max-w-6xl lg:px-8'
-            : 'max-w-2xl'
+            : 'max-w-4xl'
         }`}
       >
         {children}

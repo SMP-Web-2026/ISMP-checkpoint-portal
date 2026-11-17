@@ -122,17 +122,16 @@ export const MentorDashboardPage: React.FC = () => {
           </p>
         </div>
 
-        {/* Action Buttons */}
-        <div className="flex gap-2">
+        <div className="flex items-center gap-2.5 flex-shrink-0">
           <Link
             to="/meets/new"
-            className="inline-flex items-center justify-center px-4 py-2.5 rounded-xl bg-smp-navy hover:bg-smp-navy-hover text-white text-xs sm:text-sm font-semibold transition-all shadow-xs cursor-pointer"
+            className="inline-flex items-center justify-center px-4 py-2.5 rounded-xl bg-smp-navy hover:bg-smp-navy-hover text-white text-xs sm:text-sm font-semibold transition-all shadow-xs whitespace-nowrap cursor-pointer"
           >
             + Log New Meet
           </Link>
           <Link
             to="/mentees/setup"
-            className="inline-flex items-center justify-center px-3.5 py-2.5 rounded-xl bg-amber-50 hover:bg-amber-100 text-smp-brown border border-amber-300 text-xs sm:text-sm font-semibold transition-all cursor-pointer"
+            className="inline-flex items-center justify-center px-3.5 py-2.5 rounded-xl bg-amber-50 hover:bg-amber-100 text-smp-brown border border-amber-300 text-xs sm:text-sm font-semibold transition-all whitespace-nowrap cursor-pointer"
           >
             Edit Mentees
           </Link>
