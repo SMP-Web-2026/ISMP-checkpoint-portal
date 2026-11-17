@@ -1,5 +1,5 @@
 import { Mentee, MeetLog } from '../types';
-import { MOCK_MENTEES } from '../mock/mentees';
+import { menteesApi } from './mentees';
 import { MOCK_MEETS } from '../mock/meets';
 
 const delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
@@ -19,15 +19,14 @@ export interface MentorDashboardData {
 export const mentorApi = {
   // Fetch dashboard data for the active mentor
   async getDashboardData(mentorId: string): Promise<MentorDashboardData> {
-    await delay(200); // 200ms simulated latency
+    await delay(150);
 
-    // Filter mentees belonging to this mentor
-    const mentees = MOCK_MENTEES.filter((m) => m.mentorId === mentorId);
+    // Fetch mentees via menteesApi (which respects localStorage updates!)
+    const mentees = await menteesApi.getMentees(mentorId);
 
     // Filter meets and STRIP aiScore & status (non-negotiable privacy rule)
     const rawMeets = MOCK_MEETS.filter((m) => m.mentorId === mentorId);
     const mentorSafeMeets: MentorSafeMeetLog[] = rawMeets.map((meet) => {
-      // Destructure and discard aiScore and status
       const { aiScore: _ai, status: _st, ...safe } = meet;
       return safe;
     });
