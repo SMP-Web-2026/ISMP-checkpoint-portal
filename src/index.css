@@ -1,0 +1,39 @@
+@import 'tailwindcss';
+
+@theme {
+  /* 
+    SMP Program Brand Palette:
+    - Primary Navy (#132647) from SMP logo
+    - Accent Golden Amber (#FFC50C) from SMP logo
+    - Definite, vibrant warm sunshine cream (#FBF2D5 / #FBF0CC)
+      Distinctly yellow, but fresh, clean, and not muddy/gloomy
+  */
+  --color-smp-bg: #FDF6DE;
+  /* Card surface: warm cream with subtle sunny tint */
+  --color-smp-card: #FFFFFF;
+  --color-smp-card-subtle: #FFFBEB;
+  /* Deep Blue accent (headers, primary buttons, navbar) - exact match with SMP logo */
+  --color-smp-navy: #132647;
+  --color-smp-navy-hover: #0C1A32;
+  --color-smp-navy-light: #E7EEF8;
+  /* Earthy Warm Brown accent (badges, borders, secondary elements) */
+  --color-smp-brown: #78350F;
+  --color-smp-brown-light: #FEF3C7;
+  /* Golden Yellow accent (matching the emblem) */
+  --color-smp-yellow: #FFC50C;
+  --color-smp-yellow-soft: #FDE68A;
+  /* Text colors */
+  --color-smp-text: #1F2937;
+  --color-smp-muted: #57534E;
+  /* Borders: warm golden-sand borders with clear yellow warmth */
+  --color-smp-border: #E8D8AF;
+  --color-smp-border-strong: #D6C18E;
+}
+
+body {
+  font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: var(--color-smp-bg);
+  color: var(--color-smp-text);
+  margin: 0;
+  padding: 0;
+}
