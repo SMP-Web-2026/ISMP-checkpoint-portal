@@ -15,8 +15,8 @@ export const MOCK_MEETS: MeetLog[] = [
       { menteeId: 'mentee_4', note: 'Asked about electrical lab circuit practicals.' },
       { menteeId: 'mentee_5', note: 'Feeling slightly overwhelmed by multiple deadlines; suggested time-blocking.' },
     ],
-    aiScore: 0.08,
-    status: 'reviewed',
+    aiScore: 0.88,
+    status: 'flagged',
   },
   {
     id: 'meet_3',

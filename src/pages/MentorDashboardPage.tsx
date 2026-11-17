@@ -200,13 +200,13 @@ export const MentorDashboardPage: React.FC = () => {
                       </div>
                     </div>
 
-                    {/* Selfie proof thumbnail */}
+                    {/* Selfie proof thumbnail (larger, clickable zoom) */}
                     {meet.selfieUrl && (
                       <div className="relative group flex-shrink-0">
                         <img
                           src={meet.selfieUrl}
                           alt="Meet selfie verification"
-                          className="w-12 h-12 rounded-xl object-cover border border-smp-border shadow-2xs group-hover:scale-105 transition-transform"
+                          className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl object-cover border border-smp-border shadow-2xs group-hover:scale-105 transition-transform"
                         />
                       </div>
                     )}
