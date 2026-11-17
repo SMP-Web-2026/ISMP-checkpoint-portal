@@ -12,7 +12,7 @@ export interface User {
 export interface Mentee {
   id: string;
   name: string;
-  rollNumber?: string; // e.g. 26B03001
+  rollNumber?: string; // e.g. 26B0301 (26B + 4 digits)
   department?: string; // e.g. Computer Science, Mechanical, etc.
   mentorId: string;
 }

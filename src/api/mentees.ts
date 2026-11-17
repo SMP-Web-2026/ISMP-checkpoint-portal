@@ -20,7 +20,15 @@ export const menteesApi = {
     const stored = localStorage.getItem(`${LOCAL_STORAGE_KEY_PREFIX}${mentorId}`);
     if (stored) {
       try {
-        return JSON.parse(stored);
+        const parsed: Mentee[] = JSON.parse(stored);
+        // Normalize any old 5-digit format (26B0XXXX) to 4-digit format (26BXXXX)
+        const normalized = parsed.map((m) => {
+          if (m.rollNumber && /^26B0\d{4}$/.test(m.rollNumber)) {
+            return { ...m, rollNumber: `26B${m.rollNumber.slice(4)}` };
+          }
+          return m;
+        });
+        return normalized;
       } catch {
         // fallback to mock on parse error
       }

@@ -160,7 +160,7 @@ export const MenteeSetupPage: React.FC = () => {
               <div className="w-full sm:w-32 flex-shrink-0">
                 <input
                   type="text"
-                  placeholder="Roll No (e.g. 26B03001)"
+                  placeholder="Roll No (e.g. 26B0301)"
                   value={mentee.rollNumber}
                   onChange={(e) => updateField(index, 'rollNumber', e.target.value)}
                   className="w-full px-3 py-2 text-xs rounded-xl border border-smp-border bg-white focus:outline-none focus:ring-2 focus:ring-smp-navy text-smp-text placeholder:text-smp-muted/60"
