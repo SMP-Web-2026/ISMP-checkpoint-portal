@@ -59,4 +59,34 @@ export const meetsApi = {
 
     return newLog;
   },
+
+  // Update an existing meet log (Edit meet)
+  async updateMeetLog(meetId: string, updates: Partial<CreateMeetInput>): Promise<MeetLog> {
+    await delay(200);
+    const all = await this.getAllMeets();
+    let updatedLog: MeetLog | null = null;
+
+    const nextMeets = all.map((m) => {
+      if (m.id === meetId) {
+        updatedLog = {
+          ...m,
+          ...updates,
+          summary: updates.summary !== undefined ? updates.summary.trim() : m.summary,
+        };
+        return updatedLog;
+      }
+      return m;
+    });
+
+    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(nextMeets));
+    return updatedLog!;
+  },
+
+  // Delete a meet log
+  async deleteMeetLog(meetId: string): Promise<void> {
+    await delay(150);
+    const all = await this.getAllMeets();
+    const nextMeets = all.filter((m) => m.id !== meetId);
+    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(nextMeets));
+  },
 };
